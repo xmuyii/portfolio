@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexCrypto Exchange | Buy & Sell Crypto Fast & Securely</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            accent: '#10b981', // Emerald green
+                            accentHover: '#059669',
+                            dark: '#0b0f19',
+                            card: '#111827',
+                            border: '#1f2937'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        .glow-effect {
+            box-shadow: 0 0 35px -5px rgba(99, 102, 241, 0.25);
+        }
+        .glow-accent {
+            box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- WhatsApp Config variable script -->
+    <script>
+        // CONFIGURATION: Replace with vendor's WhatsApp number (International format without '+' or spaces)
+        const WHATSAPP_NUMBER = "2348000000000"; 
+    </script>
+
+    <!-- Top Banner -->
+    <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-emerald-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium">
+        <div class="container mx-auto flex items-center justify-center space-x-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>⚡ Live Trading Desk Active. Instantly swap USDT, BTC, ETH & Gift Cards!</span>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 backdrop-blur-md bg-brand-dark/80 border-b border-brand-border">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-600/30">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Apex<span class="text-emerald-400">Crypto</span></span>
+                </a>
+
+                <!-- Desktop Nav Items -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#rates" class="text-gray-300 hover:text-emerald-400 transition-colors">Live Rates</a>
+                    <a href="#calculator" class="text-gray-300 hover:text-emerald-400 transition-colors">Instant Swap</a>
+                    <a href="#process" class="text-gray-300 hover:text-emerald-400 transition-colors">How It Works</a>
+                    <a href="#reviews" class="text-gray-300 hover:text-emerald-400 transition-colors">Reviews</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a id="navWhatsappBtn" href="#" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition-all flex items-center space-x-2 shadow-lg shadow-emerald-500/20 hover:scale-[1.02]">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Chat With Vendor</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-gray-400 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#rates" class="block text-gray-300 hover:text-emerald-400 py-2 text-base font-medium">Live Rates</a>
+            <a href="#calculator" class="block text-gray-300 hover:text-emerald-400 py-2 text-base font-medium">Instant Swap</a>
+            <a href="#process" class="block text-gray-300 hover:text-emerald-400 py-2 text-base font-medium">How It Works</a>
+            <a href="#reviews" class="block text-gray-300 hover:text-emerald-400 py-2 text-base font-medium">Reviews</a>
+            <a id="mobileNavWhatsappBtn" href="#" target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 rounded-xl text-center flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/20">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Trade via WhatsApp</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+        <!-- Background Decorative Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-600/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-brand-card/80 border border-brand-border px-4 py-2 rounded-full text-xs sm:text-sm text-emerald-400 font-semibold mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>100% Guaranteed Instant Payouts</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+                        Trade Crypto at <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-brand-500">Unbeatable Rates</span>
+                    </h1>
+                    <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Buy & sell USDT, Bitcoin, Ethereum, and Gift Cards instantly. Get funds credited straight to your bank account or crypto wallet within 3 minutes via WhatsApp.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#calculator" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center space-x-3 text-base">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Calculate Trade</span>
+                        </a>
+                        <a id="heroWhatsappBtn" href="#" target="_blank" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-emerald-500/20 transition-all flex items-center justify-center space-x-3 text-base">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Chat With Desk</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-12 mt-12 border-t border-brand-border">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">$5M+</p>
+                            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Traded Volume</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-emerald-400">&lt; 3 Mins</p>
+                            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Avg. Payout Time</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">10K+</p>
+                            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Trade Calculator Card -->
+                <div class="lg:col-span-5">
+                    <div id="calculator" class="bg-brand-card/90 border border-brand-border p-6 sm:p-8 rounded-3xl glow-effect backdrop-blur-xl relative">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold text-white flex items-center space-x-2">
+                                <i class="fa-solid fa-arrow-right-arrow-left text-emerald-400"></i>
+                                <span>Instant Trade Desk</span>
+                            </h3>
+                            <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold px-3 py-1 rounded-full">
+                                ● Online
+                            </span>
+                        </div>
+
+                        <form id="tradeForm" class="space-y-5">
+                            <!-- Trade Action Toggle -->
+                            <div class="grid grid-cols-2 gap-2 bg-brand-dark p-1.5 rounded-xl border border-brand-border">
+                                <button type="button" id="typeSell" onclick="setTradeType('SELL')" class="py-2.5 rounded-lg text-sm font-bold transition-all bg-emerald-500 text-slate-950 shadow">
+                                    Sell Crypto (Get Cash)
+                                </button>
+                                <button type="button" id="typeBuy" onclick="setTradeType('BUY')" class="py-2.5 rounded-lg text-sm font-bold text-gray-400 hover:text-white transition-all">
+                                    Buy Crypto (Pay Cash)
+                                </button>
+                            </div>
+
+                            <!-- Asset Selection -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Select Asset</label>
+                                <select id="cryptoAsset" class="w-full bg-brand-dark border border-brand-border text-white text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:border-emerald-500 transition-colors font-medium">
+                                    <option value="USDT" data-rate-sell="1490" data-rate-buy="1520">USDT (Tether - TRC20/BEP20)</option>
+                                    <option value="BTC" data-rate-sell="1490" data-rate-buy="1520">Bitcoin (BTC)</option>
+                                    <option value="ETH" data-rate-sell="1485" data-rate-buy="1525">Ethereum (ETH)</option>
+                                    <option value="SOL" data-rate-sell="1480" data-rate-buy="1530">Solana (SOL)</option>
+                                    <option value="Gift Card" data-rate-sell="1200" data-rate-buy="0">Gift Cards (Amazon/Steam/Apple)</option>
+                                </select>
+                            </div>
+
+                            <!-- Amount Input -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">You Send (USD Value)</label>
+                                <div class="relative">
+                                    <input type="number" id="tradeAmount" value="100" min="10" placeholder="Enter amount in USD" class="w-full bg-brand-dark border border-brand-border text-white text-lg font-bold rounded-xl pl-10 pr-16 py-3.5 focus:outline-none focus:border-emerald-500 transition-colors">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold">$</span>
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400 bg-brand-card px-2 py-1 rounded">USD</span>
+                                </div>
+                            </div>
+
+                            <!-- Conversion Rate Display -->
+                            <div class="bg-brand-dark/50 border border-brand-border/60 p-4 rounded-xl space-y-2">
+                                <div class="flex justify-between text-xs text-gray-400 font-medium">
+                                    <span>Current Rate:</span>
+                                    <span id="displayRate" class="text-white font-bold">₦1,490 / $</span>
+                                </div>
+                                <div class="flex justify-between text-base font-bold">
+                                    <span class="text-gray-300">You Receive:</span>
+                                    <span id="displayTotal" class="text-emerald-400 font-extrabold text-xl">₦149,000</span>
+                                </div>
+                            </div>
+
+                            <!-- WhatsApp Trade Button -->
+                            <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all text-base flex items-center justify-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Initiate Trade On WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Market Rates Section -->
+    <section id="rates" class="py-16 bg-brand-dark/50 border-t border-b border-brand-border">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Today's Exchange Rates</h2>
+                <p class="text-gray-400 text-sm mt-2">Rates are updated in real-time to match global market trends.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Rate Card 1 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl font-bold">₮</div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">USDT</h4>
+                                <p class="text-xs text-gray-400">Tether USD</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">Popular</span>
+                    </div>
+                    <div class="space-y-2 border-t border-brand-border/60 pt-4 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">We Buy At:</span>
+                            <span class="text-white font-bold">₦1,490/$</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">We Sell At:</span>
+                            <span class="text-emerald-400 font-bold">₦1,520/$</span>
+                        </div>
+                    </div>
+                    <button onclick="quickSelect('USDT')" class="w-full mt-4 bg-brand-dark hover:bg-brand-border text-xs font-bold text-gray-300 py-2.5 rounded-lg transition-colors">Trade USDT</button>
+                </div>
+
+                <!-- Rate Card 2 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl font-bold">₿</div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Bitcoin</h4>
+                                <p class="text-xs text-gray-400">BTC</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">Instant</span>
+                    </div>
+                    <div class="space-y-2 border-t border-brand-border/60 pt-4 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">We Buy At:</span>
+                            <span class="text-white font-bold">₦1,490/$</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">We Sell At:</span>
+                            <span class="text-emerald-400 font-bold">₦1,520/$</span>
+                        </div>
+                    </div>
+                    <button onclick="quickSelect('BTC')" class="w-full mt-4 bg-brand-dark hover:bg-brand-border text-xs font-bold text-gray-300 py-2.5 rounded-lg transition-colors">Trade BTC</button>
+                </div>
+
+                <!-- Rate Card 3 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl font-bold">Ξ</div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Ethereum</h4>
+                                <p class="text-xs text-gray-400">ETH</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">High Vol</span>
+                    </div>
+                    <div class="space-y-2 border-t border-brand-border/60 pt-4 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">We Buy At:</span>
+                            <span class="text-white font-bold">₦1,485/$</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">We Sell At:</span>
+                            <span class="text-emerald-400 font-bold">₦1,525/$</span>
+                        </div>
+                    </div>
+                    <button onclick="quickSelect('ETH')" class="w-full mt-4 bg-brand-dark hover:bg-brand-border text-xs font-bold text-gray-300 py-2.5 rounded-lg transition-colors">Trade ETH</button>
+                </div>
+
+                <!-- Rate Card 4 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl font-bold">🎁</div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Gift Cards</h4>
+                                <p class="text-xs text-gray-400">Steam/Amazon/Apple</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">Best Rates</span>
+                    </div>
+                    <div class="space-y-2 border-t border-brand-border/60 pt-4 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">We Buy At:</span>
+                            <span class="text-white font-bold">Up to ₦1,200/$</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Payout Time:</span>
+                            <span class="text-emerald-400 font-bold">5 - 10 Mins</span>
+                        </div>
+                    </div>
+                    <button onclick="quickSelect('Gift Card')" class="w-full mt-4 bg-brand-dark hover:bg-brand-border text-xs font-bold text-gray-300 py-2.5 rounded-lg transition-colors">Redeem Cards</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="process" class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-white">How Trading Works</h2>
+                <p class="text-gray-400 text-sm mt-2">Seamless, 3-step trade execution direct on WhatsApp.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-brand-card border border-brand-border p-8 rounded-2xl relative">
+                    <div class="w-12 h-12 bg-brand-600 text-white font-extrabold rounded-xl flex items-center justify-center text-xl mb-6 shadow-lg shadow-brand-600/30">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Initiate Order</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Select whether you are buying or selling, choose your crypto asset, enter your amount, and click "Initiate Trade".
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-brand-card border border-brand-border p-8 rounded-2xl relative">
+                    <div class="w-12 h-12 bg-emerald-500 text-slate-950 font-extrabold rounded-xl flex items-center justify-center text-xl mb-6 shadow-lg shadow-emerald-500/30">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Confirm Details</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        You will be redirected to WhatsApp with your pre-filled trade summary. Confirm wallet address or bank account details with our desk operator.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-brand-card border border-brand-border p-8 rounded-2xl relative">
+                    <div class="w-12 h-12 bg-brand-600 text-white font-extrabold rounded-xl flex items-center justify-center text-xl mb-6 shadow-lg shadow-brand-600/30">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Instant Settlement</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Transfer the crypto or cash. Once confirmed, receive your funds or crypto within minutes!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-brand-dark/50 border-t border-brand-border">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-white mb-6">Why Traders Choose ApexCrypto Desk</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Lightning Fast Settlements</h4>
+                                <p class="text-gray-400 text-sm mt-1">We don't keep you waiting. Funds are dispatched immediately after block confirmations.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Maximum Security & Privacy</h4>
+                                <p class="text-gray-400 text-sm mt-1">Direct peer-to-peer trading via encrypted messaging without unnecessary account sign-ups.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">24/7 Human Support</h4>
+                                <p class="text-gray-400 text-sm mt-1">Talk to real traders live on WhatsApp at any time of the day or night.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials Grid -->
+                <div id="reviews" class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+                        <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs leading-relaxed italic mb-4">"Sold 2,500 USDT here. Credited to my bank account in less than 2 minutes. Best rate I've seen today!"</p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center">DA</div>
+                            <div>
+                                <h5 class="text-xs font-bold text-white">Damilola A.</h5>
+                                <p class="text-[10px] text-gray-500">Verified Client</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+                        <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs leading-relaxed italic mb-4">"Bought $500 worth of BTC. Seamless transaction and very polite vendor on WhatsApp. Recommended!"</p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center">MK</div>
+                            <div>
+                                <h5 class="text-xs font-bold text-white">Michael K.</h5>
+                                <p class="text-[10px] text-gray-500">Verified Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-brand-border py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white font-bold text-base">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="text-lg font-extrabold tracking-tight text-white">Apex<span class="text-emerald-400">Crypto</span></span>
+                </div>
+
+                <p class="text-xs text-gray-500 text-center">
+                    &copy; 2026 ApexCrypto Exchange. All rights reserved. Fast P2P Crypto Desk.
+                </p>
+
+                <div class="flex space-x-4">
+                    <a id="footerWhatsappBtn" href="#" target="_blank" class="w-9 h-9 rounded-full bg-brand-card border border-brand-border text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-brand-card border border-brand-border text-gray-400 hover:text-white flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget -->
+    <a id="floatingWhatsappBtn" href="#" target="_blank" class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-600 text-slate-950 p-4 rounded-full shadow-2xl shadow-emerald-500/50 z-50 flex items-center justify-center transition-transform hover:scale-110 glow-accent">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Interactive Script Logic -->
+    <script>
+        let currentTradeType = 'SELL';
+
+        // Update default URLs for generic WhatsApp buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultMsg = encodeURIComponent("Hello ApexCrypto! I would like to make an inquiry about crypto exchange rates.");
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${defaultMsg}`;
+            
+            document.getElementById('navWhatsappBtn').href = waUrl;
+            document.getElementById('mobileNavWhatsappBtn').href = waUrl;
+            document.getElementById('heroWhatsappBtn').href = waUrl;
+            document.getElementById('footerWhatsappBtn').href = waUrl;
+            document.getElementById('floatingWhatsappBtn').href = waUrl;
+
+            // Mobile menu toggle
+            document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.toggle('hidden');
+            });
+
+            // Recalculate on asset/amount input
+            document.getElementById('cryptoAsset').addEventListener('change', calculateTrade);
+            document.getElementById('tradeAmount').addEventListener('input', calculateTrade);
+
+            calculateTrade();
+        });
+
+        // Set trade type (SELL or BUY)
+        function setTradeType(type) {
+            currentTradeType = type;
+            const sellBtn = document.getElementById('typeSell');
+            const buyBtn = document.getElementById('typeBuy');
+
+            if (type === 'SELL') {
+                sellBtn.className = "py-2.5 rounded-lg text-sm font-bold transition-all bg-emerald-500 text-slate-950 shadow";
+                buyBtn.className = "py-2.5 rounded-lg text-sm font-bold text-gray-400 hover:text-white transition-all";
+            } else {
+                buyBtn.className = "py-2.5 rounded-lg text-sm font-bold transition-all bg-emerald-500 text-slate-950 shadow";
+                sellBtn.className = "py-2.5 rounded-lg text-sm font-bold text-gray-400 hover:text-white transition-all";
+            }
+
+            calculateTrade();
+        }
+
+        // Quick select asset from cards
+        function quickSelect(asset) {
+            const select = document.getElementById('cryptoAsset');
+            select.value = asset;
+            calculateTrade();
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Calculate rate and update UI
+        function calculateTrade() {
+            const assetSelect = document.getElementById('cryptoAsset');
+            const selectedOption = assetSelect.options[assetSelect.selectedIndex];
+            const amount = parseFloat(document.getElementById('tradeAmount').value) || 0;
+
+            const rateSell = parseFloat(selectedOption.getAttribute('data-rate-sell')) || 0;
+            const rateBuy = parseFloat(selectedOption.getAttribute('data-rate-buy')) || 0;
+
+            const rate = currentTradeType === 'SELL' ? rateSell : rateBuy;
+            const total = amount * rate;
+
+            document.getElementById('displayRate').innerText = `₦${rate.toLocaleString()} / $`;
+            document.getElementById('displayTotal').innerText = `₦${total.toLocaleString()}`;
+        }
+
+        // Handle Trade Form Submission
+        document.getElementById('tradeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const asset = document.getElementById('cryptoAsset').value;
+            const amount = document.getElementById('tradeAmount').value;
+            const rateText = document.getElementById('displayRate').innerText;
+            const totalText = document.getElementById('displayTotal').innerText;
+
+            const actionText = currentTradeType === 'SELL' ? 'SELL' : 'BUY';
+
+            // Construct formatted WhatsApp message
+            const message = `Hello ApexCrypto Desk! 👋\n\n` +
+                `I want to *${actionText}* crypto.\n\n` +
+                `📌 *Trade Details:*\n` +
+                `• *Asset:* ${asset}\n` +
+                `• *USD Amount:* $${amount}\n` +
+                `• *Applied Rate:* ${rateText}\n` +
+                `• *Estimated Total:* ${totalText}\n\n` +
+                `Please send me your payment details / wallet address to proceed with the transaction. Thanks!`;
+
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
